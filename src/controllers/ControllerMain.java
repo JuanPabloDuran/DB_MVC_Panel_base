@@ -12,7 +12,7 @@ import views.ViewMain;
 
 /**
  *
- * @author Zeo
+ * @author Zeo ft. Juan Pablo Durán
  */
 public class ControllerMain {
 
@@ -106,6 +106,7 @@ public class ControllerMain {
         // 
         controllerDetalleContacto.modelDetalleContacto.setNombre(controllerAgenda.modelAgenda.getNombre());
         controllerDetalleContacto.modelDetalleContacto.setEmail(controllerAgenda.modelAgenda.getEmail());
+        controllerDetalleContacto.modelDetalleContacto.setTel(controllerAgenda.modelAgenda.getTel());
         controllerDetalleContacto.initView();
         
         viewMain.setContentPane(controllerDetalleContacto.viewDetalleContacto);

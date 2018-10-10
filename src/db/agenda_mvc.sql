@@ -5,6 +5,7 @@ USE agenda_mvc;
 CREATE TABLE contactos( 
     id_contacto integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(50) NOT NULL,
+    telefono int(10) NOT NULL,
     email varchar(50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

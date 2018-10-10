@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Salvador Hernandez Mendoza
+ * @author Salvador Hernandez Mendoza ft. Juan Pablo Durán
  */
 public class ModelAgenda {
 
@@ -24,6 +24,15 @@ public class ModelAgenda {
 
     private String nombre;
     private String email;
+    private String tel;
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
     public String getNombre() {
         return nombre;
@@ -49,7 +58,7 @@ public class ModelAgenda {
      */
     public void conectarDB() {
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3309/agenda_mvc", "user_mvc", "pass_mvc.2018");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/agenda_mvc", "user_mvc", "pass_mvc.2018");
             st = conexion.createStatement();
             String sql = "SELECT * FROM contactos;";
             System.out.println(sql);
@@ -68,7 +77,8 @@ public class ModelAgenda {
     public void setValues() {
         try {
             nombre = rs.getString("nombre");
-            email = rs.getString("email");
+            tel = rs.getString("telefono");
+            email = rs.getString("email"); 
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Error model 102: " + err.getMessage());
 
@@ -81,7 +91,14 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverPrimerRegistro() {
-        System.out.println("moverPrimerRegistro");
+       try {
+            rs.first();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+            tel = rs.getString("telefono");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" + ex.getMessage());
+        }
     }
 
     /**
@@ -91,7 +108,16 @@ public class ModelAgenda {
      * email
      */
     public void moverSiguienteRegistro() {
-        System.out.println("moverSiguienteRegistro");
+         try {
+            if (!rs.isLast()) {
+                rs.next();
+                nombre = rs.getString("nombre");
+                email = rs.getString("email");
+                tel = rs.getString("telefono");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error 002" + ex.getMessage());
+        }
     }
 
     /**
@@ -101,7 +127,16 @@ public class ModelAgenda {
      * email
      */
     public void moverAnteriorRegistro() {
-        System.out.println("moverAnteriorRegistro");
+       try {
+            if (!rs.isFirst()) {
+                rs.previous();
+                nombre = rs.getString("nombre");
+                email = rs.getString("email");
+                tel = rs.getString("telefono");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error 003" + ex.getMessage());
+        }
     }
 
     /**
@@ -110,6 +145,13 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverUltimoRegistro() {
-        System.out.println("moverUltimoRegistro");
+         try {
+            rs.last();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+            tel = rs.getString("telefono");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error 005" + ex.getMessage());
+        }
     }
 }

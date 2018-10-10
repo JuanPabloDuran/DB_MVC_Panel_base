@@ -12,7 +12,7 @@ import views.ViewAgenda;
 
 /**
  *
- * @author Salvador Hernandez Mendoza
+ * @author Salvador Hernandez Mendoza ft. Juan Pablo Durán
  */
 public class ControllerAgenda {
 
@@ -61,6 +61,7 @@ public class ControllerAgenda {
         modelAgenda.conectarDB();
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
+        viewAgenda.jtf_tel.setText(modelAgenda.getTel());
     }
 
 //    /**
@@ -124,5 +125,6 @@ public class ControllerAgenda {
     private void setValues() {
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
+        viewAgenda.jtf_tel.setText(modelAgenda.getTel());
     }
 }

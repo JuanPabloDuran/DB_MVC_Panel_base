@@ -7,9 +7,10 @@ package controllers;
 import models.ModelDetalleContacto;
 import views.ViewDetalleContacto;
 
+
 /**
  *
- * @author Zeo
+ * @author Zeo ft. Juan Pablo Durán
  */
 public class ControllerDetalleContacto {
     public ModelDetalleContacto modelDetalleContacto;
@@ -34,5 +35,6 @@ public class ControllerDetalleContacto {
     public final void initView(){
         viewDetalleContacto.jl_nombre.setText(modelDetalleContacto.getNombre());
         viewDetalleContacto.jl_email.setText(modelDetalleContacto.getEmail());
+        viewDetalleContacto.jl_tel.setText(modelDetalleContacto.getTel());
     }
 }

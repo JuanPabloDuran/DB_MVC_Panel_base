@@ -7,7 +7,7 @@ package models;
 
 /**
  *
- * @author Zeo
+ * @author Zeo ft. Juan Pablo Durán
  */
 public class ModelMain {
 

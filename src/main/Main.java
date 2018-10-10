@@ -17,7 +17,7 @@ import views.ViewDetalleContacto;
 import controllers.ControllerDetalleContacto;
 /**
  *
- * @author Zeo
+ * @author Zeo ft. Juan Pablo Durán
  */
 public class Main {
 

@@ -7,13 +7,24 @@ package models;
 
 /**
  *
- * @author Zeo
+ * @author Zeo ft. Juan Pablo Durán
  */
 public class ModelDetalleContacto {
     private String nombre;
     private String email;
+    private String tel;
+
+    public String getTel() {
+        System.out.println(tel);
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
     public String getNombre() {
+        System.out.println(nombre);
         return nombre;
     }
 
@@ -22,6 +33,7 @@ public class ModelDetalleContacto {
     }
 
     public String getEmail() {
+        System.out.println(email);
         return email;
     }
 
